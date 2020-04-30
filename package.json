@@ -1,0 +1,26 @@
+{
+  "name": "Hamburger-App",
+  "version": "1.0.0",
+  "description": "Icons made by <a href=\"https://www.flaticon.com/authors/freepik\" title=\"Freepik\">Freepik</a> from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\"> www.flaticon.com</a>",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymataya/Hamburger-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ymataya/Hamburger-App/issues"
+  },
+  "homepage": "https://github.com/ymataya/Hamburger-App#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "mysql": "^2.18.1"
+  }
+}
