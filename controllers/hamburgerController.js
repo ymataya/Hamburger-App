@@ -12,6 +12,7 @@ router.get("/", function(req,res){
 })
 
 router.post("/api/create/:burger", function(req, res){
+    console.log(req.params.burger);
     hamburger.createBurger(req.params.burger, function(data){
         console.log(data)
         res.redirect("/");
@@ -19,16 +20,15 @@ router.post("/api/create/:burger", function(req, res){
 })
 
 router.put("/api/change/:bool/:id", function(req, res) {
-    if(req.params.bool === "true"){
+    console.log(req.params.bool, req.params.id)
+    if(req.params.bool == "1"){
         var change = false;
-    }else if(req.params.bool === "false"){
-        var change = true;
-    }else if(req.params.bool === true) {
-        var change = false;
-    } else {
+    }else if(req.params.bool == "0"){
         var change = true;
     }
+    console.log(change)
     hamburger.updateBurger(change, req.params.id, function(data){
+        console.log(data)
         res.redirect("/");
     })
 })

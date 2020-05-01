@@ -2,13 +2,13 @@
     <div class="col-md-2">
     </div>
     <div class="col-md-8">
-        {{!-- ADD NEW BURGER --}}
-<form class="create-form">
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" id="new-burger" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Type in a burger...">
-        <span><button type="submit" id="add">Add Burger</button></span>
-    </div>
-</form>
+        <form class="create-form">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="new-burger" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" placeholder="Type in a burger...">
+                <span><button type="submit" id="add">Add Burger</button></span>
+            </div>
+        </form>
     </div>
     <div class="col-md-2">
     </div>
@@ -18,38 +18,75 @@
     <div class="col-md-1">
     </div>
     <div class="col-md-5">
-             <div class="card">
+        <div class="card">
             <div class="card-body" id="header">
-                 <h6>Burger Menu</h6>
+                <h6>Burger Menu</h6>
             </div>
         </div>
-                <div class="card">
+        <div class="card">
             <div class="card-body">
                 {{#each burger}}
+                {{#unless devour}}
                 <p class="burgers">{{this.id}}. {{this.name}}</p>
-                <button type="button" class="btn" id="eat">Eat</button>
-                <button type="button" class="btn" id="delete">Remove</button>
+                <button type="button" class="btn eat" data-id={{this.devour}}>Eat</button>
+                <button type="button" class="btn delete" data-del={{this.id}}>Remove</button>
+                {{/unless}}
                 {{/each}}
             </div>
         </div>
+    </div>
+
+{{!-- <div class="row"> --}}
+    {{!-- <div class="col-md-1">
     </div>
     <div class="col-md-5">
-        <div class="card">
-            <div class="card-body" id="header">
-                 <h6>Eaten Burgers</h6>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                {{#each burger}}
-                <p class="burgers">{{this.id}}. {{this.name}}</p>
-                <button type="button" class="btn" id="not-eat">Return</button>
-                <button type="button" class="btn" id="delete">Remove</button>
-                {{/each}}
-            </div>
-        </div>
-           <div class="col-md-1">
-    </div>
+        <ul>
+            {{#each burger}}
+            {{#unless devour}}
+            <li>
+                <span>{{this.id}}. {{this.name}}</span>
+                <button type="button" class="btn eat" data-id={{this.devour}}>Eat</button>
+                <button type="button" class="btn delete" data-id={{this.id}}>Remove</button>
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div> --}}
+
+<div class="col-md-5">
+<div class="card">
+    <div class="card-body" id="header">
+            <h6>Eaten Burgers</h6>
     </div>
 </div>
+<div class="card">
+    <div class="card-body">
+        {{#each burger}}
+        {{#if devour}}
+        <p class="burgers">{{this.id}}. {{this.name}}</p>
+        <button type="button" class="btn eat" data-id={{this.devour}}>Return</button>
+        <button type="button" class="btn delete" data-del={{this.id}}>Remove</button>
+        {{/if}}
+        {{/each}}
+    </div>
+</div>
+<div class="col-md-1">
+</div>
 
+    {{!-- <div class="col-md-5">
+        <ul>
+        {{#each burger}}
+        {{#if devour}}
+
+        <li>
+            <span>{{this.id}}. {{this.name}}</span>
+            <button type="button" class="btn eat" data-id={{this.devour}}>Return</button>
+            <button type="button" class="btn delete" data-id={{this.id}}>Remove</button>
+        </li>
+        {{/if}}
+        {{/each}}
+        </ul>
+        <div class="col-md-1">
+        </div>
+    </div> --}}
+{{!-- </div> --}}

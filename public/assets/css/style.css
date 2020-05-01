@@ -42,14 +42,16 @@ p {
     color: white;
 }
 
-.btn {
+.eat {
     background-color: #ef7e56 !important;
     color:white!important;
     font-size: 14px !important;
 }
 
-#delete {
+.delete {
     background-color: #6996b3!important;
+    color:white!important;
+    font-size: 14px !important;
 }
 
 #add {

@@ -4,13 +4,10 @@ $(function() {
         $("#add").on("click", function(event) {
         event.preventDefault();
 
-        var newBurger = {
-            name: $("#new-burger").val().trim(),
-        };
+        var newBurger = $("#new-burger").val().trim();
 
         $.ajax("/api/create/" + newBurger, {
-            type: "POST",
-            data: newBurger
+            type: "POST"
         }).then(
             function() {
             console.log("Created New Burger");
@@ -21,20 +18,15 @@ $(function() {
 
     // PUT - UPDATE BURGER STATE //
 
-    $(".change-sleep").on("click", function(event) {
+    $(".eat").on("click", function(event) {
+        event.preventDefault();
         var id = $(this).data("id");
-        var newSleep = $(this).data("newsleep");
+        var newDevour = $(this).attr("data-id");
     
-        var newSleepState = {
-          sleepy: newSleep
-        };
-    
-    $.ajax("/api/change/:bool/" + id, {
-        type: "PUT",
-        data: newSleepState
+    $.ajax("/api/change/" + newDevour + "/" + id, {
+        type: "PUT"
       }).then(
         function() {
-          console.log("changed sleep to", newSleep);
           // Reload the page to get the updated list
           location.reload();
         }
@@ -42,21 +34,17 @@ $(function() {
     });
 
     // DELETE BURGER //
-    
-    $("#delete").on("click", function(event) {
-        var id = $(this).data("id");
+    $(".delete").on("click", function(event) {
+        event.preventDefault();
+        var id = $(this).attr("data-del");
     
         $.ajax("api/delete/" + id, {
           type: "DELETE"
         }).then(
-          function() {
-            console.log("Burger Deleted", id);
+          function(data) {
             location.reload();
+            //   console.log("deleted")
           }
         );
       });
-
-
-
-
 });
