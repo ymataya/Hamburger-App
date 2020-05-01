@@ -1,5 +1,5 @@
 body {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
     background-color: #f9f9f9!important;
 }
 
@@ -38,7 +38,7 @@ p {
 }
 
 #header {
-    background-color: #523f41;
+    background-color: #8c705f;
     color: white;
 }
 

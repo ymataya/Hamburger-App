@@ -17,6 +17,8 @@ The user is first presented with a list of burgers that were previously added. T
 * Express Handlebars
 * MySQL
 * Heroku
+* Google Fonts
+* Bootstrap
 * Burger Icon from <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
 ## Project Preview:
