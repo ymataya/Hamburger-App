@@ -19,8 +19,9 @@ $(function() {
     // PUT - UPDATE BURGER STATE //
     $(".eat").on("click", function(event) {
         event.preventDefault();
-        var id = $(this).data("id");
-        var newDevour = $(this).attr("data-id");
+        var id = $(this).attr("id");
+        var newDevour = $(this).attr("data-devour");
+        console.log(newDevour);
     
     $.ajax("/api/change/" + newDevour + "/" + id, {
         type: "PUT"

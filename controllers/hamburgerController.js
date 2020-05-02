@@ -29,7 +29,7 @@ router.put("/api/change/:bool/:id", function(req, res) {
     console.log(change)
     hamburger.updateBurger(change, req.params.id, function(data){
         console.log(data)
-        res.redirect("/");
+        // res.redirect("/");
     })
 })
 

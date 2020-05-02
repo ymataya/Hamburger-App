@@ -28,7 +28,7 @@
                 {{#each burger}}
                 {{#unless devour}}
                 <p class="burgers">{{this.name}}</p>
-                <button type="button" class="btn eat" data-id={{this.devour}}>Eat</button>
+                <button type="button" class="btn eat" id={{this.id}} data-devour={{this.devour}}>Eat</button>
                 <button type="button" class="btn delete" data-del={{this.id}}>Throw</button>
                 {{/unless}}
                 {{/each}}
@@ -64,7 +64,7 @@
             {{#each burger}}
             {{#if devour}}
             <p class="burgers">{{this.name}}</p>
-            <button type="button" class="btn eat" data-id={{this.devour}}>Return</button>
+            <button type="button" class="btn eat" id={{this.id}} data-devour={{this.devour}}>Return</button>
             <button type="button" class="btn delete" data-del={{this.id}}>Throw</button>
             {{/if}}
             {{/each}}

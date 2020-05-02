@@ -18,6 +18,7 @@ var orm = {
     },
 
     update: function(change,id,cb){
+        console.log(change, id);
         connection.query(`UPDATE burgers SET devour = ${change} WHERE id=${id};`, function(err,result){
             if (err) {throw err};
             cb(result); 
