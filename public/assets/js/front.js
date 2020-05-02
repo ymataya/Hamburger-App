@@ -17,7 +17,6 @@ $(function() {
     });
 
     // PUT - UPDATE BURGER STATE //
-
     $(".eat").on("click", function(event) {
         event.preventDefault();
         var id = $(this).data("id");
@@ -27,10 +26,9 @@ $(function() {
         type: "PUT"
       }).then(
         function() {
-          // Reload the page to get the updated list
-          location.reload();
         }
       );
+      location.reload();
     });
 
     // DELETE BURGER //
@@ -42,9 +40,8 @@ $(function() {
           type: "DELETE"
         }).then(
           function(data) {
-            location.reload();
-            //   console.log("deleted")
           }
         );
+        location.reload();
       });
 });
